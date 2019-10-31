@@ -1,6 +1,6 @@
 {
   "name": "verify-quickbooks-webhooks",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "author": "Tyler Zey",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tylerzey/validate-quickbooks-webhooks.git"
+    "url": "git+https://github.com/tylerzey/verify-quickbooks-webhooks.git"
   },
   "scripts": {
     "start": "tsdx watch",

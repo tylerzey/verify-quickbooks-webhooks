@@ -11,9 +11,9 @@ Verifying that these webhooks are coming from QuickBooks can be an annoying task
 ## To Use
 
 ```js
-import verifyWebhookSignature from 'validate-quickbooks-webhooks';
+import verifyWebhookSignature from 'verify-quickbooks-webhooks';
 // or
-const verifyWebhookSignature = require('validate-quickbooks-webhooks');
+const verifyWebhookSignature = require('verify-quickbooks-webhooks');
 
 const isValidRequest = verifyWebhookSignature(
   verificationTokenFromQuickBooksDashboard, // store this as an env variable or something. You get it from the QB dashboard
