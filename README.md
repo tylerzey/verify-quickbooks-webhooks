@@ -6,6 +6,9 @@ A simple function to quickly see if the webhook is from QuickBooks.
 
 QuickBooks can send webhooks to your application. These webhooks include a header that you should verify to avoid allowing anyone to trigger your code.
 
+[View On NPM](https://www.npmjs.com/package/verify-quickbooks-webhooks)
+[View On GitHub](https://github.com/tylerzey/verify-quickbooks-webhooks)
+
 Verifying that these webhooks are coming from QuickBooks can be an annoying task. This function tackles it all for you.
 
 ## To Use
