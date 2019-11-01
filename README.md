@@ -28,3 +28,24 @@ if (!isValidRequest) {
   throw new Error('Sorry, this does not look to be a valid action');
 }
 ```
+
+```ts
+// typescript example including webhook type def
+import verifyWebhookSignature, {
+  QuickBooksEventNotificationsType,
+} from 'verify-quickbooks-webhooks';
+
+const isValidRequest = verifyWebhookSignature(
+  verificationTokenFromQuickBooksDashboard, // store this as an env variable or something. You get it from the QB dashboard
+  incomingQuickBooksSignatureFromHeaders, // request.headers['intuit-signature'];
+  payload // the request.body string
+);
+
+if (!isValidRequest) {
+  throw new Error('Sorry, this does not look to be a valid action');
+}
+
+const body = JSON.parse(event.body);
+const eventNotifications: QuickBooksEventNotificationsType =
+  body.eventNotifications;
+```

@@ -1,4 +1,5 @@
 import { sha256 } from 'js-sha256';
+import * as types from './types';
 
 const requestIsFromIntuit = (
   verificationTokenFromQuickBooksDashboard: string,
@@ -24,4 +25,5 @@ const requestIsFromIntuit = (
   return hashedPayloadConvertedAsHex === decodedIncomingSignatureAsHex;
 };
 
+export type QuickBooksEventNotificationsType = types.QuickBooksEventNotificationsType;
 export default requestIsFromIntuit;
