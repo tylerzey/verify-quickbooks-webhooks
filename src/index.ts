@@ -1,16 +1,20 @@
 import { sha256 } from 'js-sha256';
-import * as types from './types';
+import type { QuickBooksEventNotificationsType } from './types';
 
-const requestIsFromIntuit = (
+export const verifyWebhook = (
   verificationTokenFromQuickBooksDashboard: string,
   incomingQuickBooksSignatureFromHeaders: string,
   payload: string
 ): boolean => {
-  if (!verificationTokenFromQuickBooksDashboard)
+  if (!verificationTokenFromQuickBooksDashboard) {
     throw new Error('verificationTokenFromQuickBooksDashboard is required');
-  if (!incomingQuickBooksSignatureFromHeaders)
+  }
+  if (!incomingQuickBooksSignatureFromHeaders) {
     throw new Error('incomingQuickBooksSignatureFromHeaders is required');
-  if (!payload) throw new Error('Payload is required');
+  }
+  if (!payload) {
+    throw new Error('Payload is required');
+  }
 
   const hashedPayloadConvertedAsHex = sha256.hmac
     .create(verificationTokenFromQuickBooksDashboard)
@@ -25,5 +29,5 @@ const requestIsFromIntuit = (
   return hashedPayloadConvertedAsHex === decodedIncomingSignatureAsHex;
 };
 
-export type QuickBooksEventNotificationsType = types.QuickBooksEventNotificationsType;
-export default requestIsFromIntuit;
+export type { QuickBooksEventNotificationsType };
+export default verifyWebhook;
