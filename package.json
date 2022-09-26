@@ -1,6 +1,6 @@
 {
   "name": "verify-quickbooks-webhooks",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "license": "MIT",
   "author": "Tyler Zey",
   "main": "dist/index.js",
